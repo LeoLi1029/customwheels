@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - CustomRim Works</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #0a0a0a;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.1);
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffd700;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+        .banner {
+            width: 100%;
+            height: 250px;
+            background: url('image.png') center/cover no-repeat;
+            margin-top: 70px;
+        }
+        .contact-container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .contact-header {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 20px;
+        }
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 20px;
+            background: #1a1a1a;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+        .contact-info div {
+            width: 45%;
+            text-align: left;
+            padding: 20px;
+        }
+        .contact-info h3 {
+            color: #ffd700;
+        }
+        .contact-info p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        .contact-form {
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: left;
+        }
+        .contact-form label {
+            font-size: 16px;
+            color: #ffd700;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ffd700;
+            border-radius: 5px;
+            background: #0a0a0a;
+            color: #ffffff;
+            font-size: 16px;
+        }
+        .contact-form button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background: #ffd700;
+            color: #0a0a0a;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background: #e6b800;
+        }
+        .map {
+            width: 100%;
+            height: 400px;
+            margin-top: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        footer {
+            background: #1a1a1a;
+            padding: 40px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            color: #ffffff;
+            margin-top: 40px;
+        }
+        .footer-column {
+            width: 20%;
+            min-width: 200px;
+        }
+        .footer h3 {
+            color: #ffd700;
+            font-size: 18px;
+        }
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer ul li {
+            margin-bottom: 8px;
+        }
+        .footer ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .footer ul li a:hover {
+            color: #ffd700;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">CustomRim Works</div>
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#quote" class="btn">Get Free Quote</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="banner"></div>
+
+<section class="contact-container">
+    <h2 class="contact-header">Get in Touch</h2>
+
+    <div class="contact-info">
+        <div>
+            <h3>Contact Information</h3>
+            <p>📍 CustomRim Works HQ, 123 Rim Street, Auto City</p>
+            <p>📞 +123 456 7890</p>
+            <p>📧 sales@customrimworks.com</p>
+            <p>🕒 Mon - Fri: 9 AM - 6 PM | Sat: 10 AM - 4 PM</p>
+        </div>
+        <div>
+            <h3>Follow Us</h3>
+            <p>Facebook | Instagram | YouTube</p>
+        </div>
+    </div>
+
+    <div class="contact-form">
+        <h3>Send Us a Message</h3>
+        <form action="#" method="post">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <div class="map">
+        <iframe 
+            src="https://maps.google.com/maps?q=123+Rim+Street+Auto+City&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+            width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-column">
+        <h3>Customer Service</h3>
+        <ul>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Parts Approval</a></li>
+            <li><a href="#">Dealer Search</a></li>
+        </ul>
+    </div>
+    <div class="footer-column">
+        <h3>Company Info</h3>
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+        </ul>
+    </div>
+</footer>
+
+</body>
+</html>
