@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ET Calculator - CustomRim Works</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #0a0a0a;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.1);
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffd700;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+        .banner {
+            width: 100%;
+            height: 250px;
+            background: url('image.png') center/cover no-repeat;
+            margin-top: 70px;
+        }
+        .container {
+            max-width: 600px;
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+            text-align: center;
+            margin: 50px auto;
+        }
+        h2 {
+            color: #ffd700;
+            margin-bottom: 25px;
+        }
+        label {
+            display: block;
+            margin-top: 14px;
+            font-weight: bold;
+            text-align: left;
+            color: #ffd700;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border: 1px solid #ffd700;
+            border-radius: 6px;
+            font-size: 14px;
+            background: #0a0a0a;
+            color: white;
+        }
+        button {
+            margin-top: 25px;
+            padding: 12px;
+            width: 100%;
+            background: #ffd700;
+            color: #0a0a0a;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background 0.3s ease-in-out;
+        }
+        button:hover {
+            background: #e6b800;
+        }
+        #result {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-top: 18px;
+            padding: 12px;
+            background: #333;
+            border-radius: 8px;
+            border: 1px solid #ffd700;
+        }
+        footer {
+            background: #1a1a1a;
+            padding: 40px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            color: #ffffff;
+            margin-top: 40px;
+        }
+        .footer-column {
+            width: 20%;
+            min-width: 200px;
+        }
+        .footer h3 {
+            color: #ffd700;
+            font-size: 18px;
+        }
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer ul li {
+            margin-bottom: 8px;
+        }
+        .footer ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .footer ul li a:hover {
+            color: #ffd700;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">CustomRim Works</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="calculator.html">ET Calculator</a></li>
+                <li><a href="calculator.html">ET Calculator</a></li>
+<li><a href="contact.html">Contact</a></li>
+                <li><a href="#quote" class="btn">Get Free Quote</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="banner"></div>
+    <div class="container">
+        <h2>Custom Wheel Calculator</h2>
+        <form id="wheelForm">
+            <label for="new_width">New Wheel Width (inch):</label>
+            <input type="number" id="new_width" required>
+            
+            <label for="pcd">PCD (mm):</label>
+            <input type="number" id="pcd" required>
+            
+            <label for="center_bore">Center Bore (mm):</label>
+            <input type="number" id="center_bore" required>
+            
+            <label for="fender_distance">Distance from Fender to Wheel (mm):</label>
+            <input type="number" id="fender_distance" required>
+            
+            <label for="caliper_clearance">Minimum Safe Distance to Caliper (mm):</label>
+            <input type="number" id="caliper_clearance" required>
+            
+            <button type="button" onclick="calculateNewET()">Calculate New ET</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <footer class="footer">
+        <div class="footer-column">
+            <h3>Customer Service</h3>
+            <ul>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Parts Approval</a></li>
+                <li><a href="#">Dealer Search</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
