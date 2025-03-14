@@ -112,38 +112,6 @@
             border-radius: 8px;
             border: 1px solid #ffd700;
         }
-        footer {
-            background: #1a1a1a;
-            padding: 40px;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            color: #ffffff;
-            margin-top: 40px;
-        }
-        .footer-column {
-            width: 20%;
-            min-width: 200px;
-        }
-        .footer h3 {
-            color: #ffd700;
-            font-size: 18px;
-        }
-        .footer ul {
-            list-style: none;
-            padding: 0;
-        }
-        .footer ul li {
-            margin-bottom: 8px;
-        }
-        .footer ul li a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 14px;
-        }
-        .footer ul li a:hover {
-            color: #ffd700;
-        }
     </style>
 </head>
 <body>
@@ -155,18 +123,39 @@
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="calculator.html">ET Calculator</a></li>
-                <li><a href="calculator.html">ET Calculator</a></li>
-<li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
                 <li><a href="#quote" class="btn">Get Free Quote</a></li>
             </ul>
         </nav>
     </header>
     <div class="banner"></div>
     <div class="container">
-        <h2>Custom Wheel Calculator</h2>
-        <form id="wheelForm">
-            <label for="new_width">New Wheel Width (inch):</label>
-            <input type="number" id="new_width" required>
+        <h2>ET Adjustment Calculator</h2>
+        <form id="etCalculatorForm">
+            <label for="current_et">Current Wheel ET (mm):</label>
+            <input type="number" id="current_et" required>
+            
+            <label for="spacer">Current Spacer Thickness (mm):</label>
+            <input type="number" id="spacer" required>
+            
+            <label for="hub_to_fender">Distance from Hub to Fender (mm):</label>
+            <input type="number" id="hub_to_fender" required>
+            
+            <label for="caliper_clearance">Distance from Hub to Outer Caliper Edge (mm):</label>
+            <input type="number" id="caliper_clearance" required>
+            
+            <button type="button" onclick="calculateET()">Calculate New ET</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <div class="container">
+        <h2>Save Wheel Data</h2>
+        <form id="wheelDataForm">
+            <label for="wheel_size">Wheel Size (inches):</label>
+            <input type="text" id="wheel_size" required>
+            
+            <label for="wheel_width">Wheel Width (inches):</label>
+            <input type="number" id="wheel_width" required>
             
             <label for="pcd">PCD (mm):</label>
             <input type="number" id="pcd" required>
@@ -174,25 +163,35 @@
             <label for="center_bore">Center Bore (mm):</label>
             <input type="number" id="center_bore" required>
             
-            <label for="fender_distance">Distance from Fender to Wheel (mm):</label>
-            <input type="number" id="fender_distance" required>
+            <label for="final_et">Final Recommended ET (mm):</label>
+            <input type="number" id="final_et" required>
             
-            <label for="caliper_clearance">Minimum Safe Distance to Caliper (mm):</label>
-            <input type="number" id="caliper_clearance" required>
-            
-            <button type="button" onclick="calculateNewET()">Calculate New ET</button>
+            <button type="button" onclick="saveWheelData()">Save Data</button>
         </form>
-        <div id="result"></div>
     </div>
-    <footer class="footer">
-        <div class="footer-column">
-            <h3>Customer Service</h3>
-            <ul>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Parts Approval</a></li>
-                <li><a href="#">Dealer Search</a></li>
-            </ul>
-        </div>
+    <footer>
+        <p>© 2025 CustomRim Works | Follow Us on Social Media</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a> | <a href="contact.html">Contact</a></p>
     </footer>
+    <script>
+        function calculateET() {
+            let currentET = parseFloat(document.getElementById('current_et').value);
+            let spacer = parseFloat(document.getElementById('spacer').value);
+            let hubToFender = parseFloat(document.getElementById('hub_to_fender').value);
+            let caliperClearance = parseFloat(document.getElementById('caliper_clearance').value);
+            
+            if (isNaN(currentET) || isNaN(spacer) || isNaN(hubToFender) || isNaN(caliperClearance)) {
+                alert("Please enter all values!");
+                return;
+            }
+            
+            let newET = currentET - spacer + (hubToFender - caliperClearance);
+            document.getElementById('result').innerHTML = `<p>Recommended ET: <strong>${newET.toFixed(2)} mm</strong></p>`;
+        }
+        
+        function saveWheelData() {
+            alert("Wheel data has been saved successfully!");
+        }
+    </script>
 </body>
 </html>
